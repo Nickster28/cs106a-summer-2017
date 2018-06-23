@@ -16,18 +16,6 @@ li {
   margin-bottom: 0px;
 }
 
-dd {
-    margin-bottom: 2.5em;
-}
-
-code {
-    color:black;
-    padding:0px;
-    border:0px;
-    background-color:transparent;
-    font-weight: bold;
-}
-
 .mapOverlay {
    background:transparent; 
    position:relative; 
@@ -48,14 +36,6 @@ code {
 
 a:link:after, a:visited:after {
     content: "";
-}
-
-pre {-moz-tab-size: 3;} /* Code for Firefox */
-pre {-o-tab-size: 3;} /* Code for Opera 10.6-12.1 */
-pre {tab-size: 3;}
-
-.style-accordion {
-  padding-top: 20pt;
 }
 
 .moment {
@@ -113,8 +93,9 @@ pre {tab-size: 3;}
         position: relative;
         padding-bottom: 75%; // This is the aspect ratio
         height: 0;
-        overflow: hidden;
-    }
+        overflow: hidden;  
+}
+
 .google-maps iframe {
     position: absolute;
     top: 0;
@@ -172,3 +153,21 @@ pre strong, pre em {
 pre.code-bad strong, pre.code-bad em {
   color: #660000;
 }
+
+.style-accordion {
+  padding-top: 20pt;
+}dd {
+    margin-bottom: 2.5em;
+}
+
+code {
+    color:black;
+    padding:0px;
+    border:0px;
+    background-color:transparent;
+    font-weight: bold;
+}
+
+pre {-moz-tab-size: 3;} /* Code for Firefox */
+pre {-o-tab-size: 3;} /* Code for Opera 10.6-12.1 */
+pre {tab-size: 3;}
