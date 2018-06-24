@@ -40,16 +40,21 @@ materials according to the following naming conventions:
 
 For instance, for section 6 you would add `Section6.pdf`, `Section6.zip` and `Section6-Solutions.pdf`.
 
-You must also add an `info.json` file to the directory that looks as follows:
+You must also create or modify a `solutionsDates.json` file in the root `WWW/section/` directory that looks as follows:
 ```
-{
-	"solutionsDate": "2017063017"
-}
+[
+	"2017063017",
+	"2017070717",
+	"2017071417",
+	"2017072117",
+	"2017072817",
+	"2017080417",
+	"2017081117"
+]
 ```
-This timestamp should be when the solution materials will be made available (in the format YYYYMMDDHH).
-The solution handout and code will be visible in the Section dropdown from that
-date onwards.  The section handout will be visible as soon as it is added to the
-repository.
+This is an array of timestamps that represent when solution materials for section `i+1` should be made available 
+(in the format YYYYMMDDHH).  Section materials with release dates added to this file will be visible in the Section 
+dropdown, with solutions visible from the stated date onwards.
 
 - **Add a new assignment:** add the assignment page template to
 `templates/assignments/` and update

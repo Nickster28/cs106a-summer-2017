@@ -33,7 +33,6 @@ TEMPLATE_DIR = 'templates'
 
 # Assumed to be within OUTPUT_DIR
 HANDOUTS_DIR = 'handouts'
-SECTION_DIR = 'section'
 
 # The root URL at which this webpage is hosted
 ROOT = '//web.stanford.edu/class/archive/cs/cs106a/cs106a.' + str(courseInfo.QUARTER_NUMBER) + '/'
@@ -63,7 +62,6 @@ def compile():
     with open('schedule.json') as scheduleFile:
         scheduleData = json.load(scheduleFile)
         handoutsData = searchHandoutsDirectory()
-        sectionData = searchSectionDirectory()
 
         # Compile all templates
         templateFilePaths = getTemplateFilePaths('')
@@ -71,7 +69,7 @@ def compile():
         for templateFilePath in templateFilePaths:
             print("Compiling " + templateFilePath + "...")
             outputPath = compileTemplate(templateFilePath, scheduleData,
-                handoutsData, sectionData)
+                handoutsData)
             print(templateFilePath + " -> " + outputPath)
 
     print("\nDONE.\n")
@@ -104,36 +102,6 @@ def searchHandoutsDirectory():
 
     return handoutsData 
 
-'''
-FUNCTION: searchSectionDirectory
----------------------------------
-Parameters: NA
-Returns: a list of section material tuples: (path, solutionsReleaseDateString).
-The path is the path to the folder containing section i+1's materials.  The date
-string is read from info.json and is a "YYYYMMDDHH" string of when the solution 
-materials should be released.  Assumes the following are in each directory:
-    - Section[i+1]-Solutions.pdf
-    - Section[i+1].pdf
-    - Section[i+1].zip
-    - info.json with the format { solutionsDate: "YYYYMMDDHH" }
----------------------------------
-'''
-def searchSectionDirectory():
-    sectionDirPath = OUTPUT_DIR + '/' + SECTION_DIR + '/'
-    paths = []
-    for fileName in os.listdir(sectionDirPath):
-        if not fileName.startswith("."):
-            filePath = os.path.join(sectionDirPath, fileName)
-            with open(filePath + '/info.json', 'rb') as infoFile:
-                info = json.load(infoFile)
-                solutionsDate = info['solutionsDate']
-                paths.append((
-                        os.path.join(SECTION_DIR, fileName), 
-                        solutionsDate
-                    )
-                )
-    paths.sort()
-    return paths
 
 '''
 FUNCTION: getTemplateFilePaths
@@ -184,23 +152,20 @@ Parameters:
                     parameter to render the template.
     handoutsData - the list of tuples of handout data.  Passed in as a parameter
                     to render the template.
-    sectionData - the list of section folders.  Passed in as a parameter to
-                    render the template.
 
 Returns: the path of the saved, compiled template file.
 
 Compiles the given template file, passing in the pathToRoot, scheduleData,
-handoutsData and sectionData as template parameters.  Saves the compiled
+and handoutsData as template parameters.  Saves the compiled
 template to relativePath in the OUTPUT_DIR directory.
 -------------------------
 '''
-def compileTemplate(relativePath, scheduleData, handoutsData, sectionData):
+def compileTemplate(relativePath, scheduleData, handoutsData):
     pathToRoot = getPathToRootFrom(relativePath)
     filePath = os.path.join(TEMPLATE_DIR, relativePath)
     templateText = open(filePath).read()
     compiledHtml = SimpleTemplate(templateText).render(pathToRoot=pathToRoot,
-        schedule=scheduleData, handouts=handoutsData, sections=sectionData,
-        courseInfo=courseInfo)
+        schedule=scheduleData, handouts=handoutsData, courseInfo=courseInfo)
     compiledHtml = compiledHtml.encode('utf8')
 
     relativePath = os.path.join(OUTPUT_DIR, relativePath)
