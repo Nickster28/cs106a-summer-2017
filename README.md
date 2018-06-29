@@ -6,10 +6,12 @@ follows:
 
 ```
 bottle/ - the source files for Bottle, the library used to compile templates
+markdown/ - the source files for Python Markdown, the library used to compile announcements
 templates/ - the uncompiled Bottle templates (.html represent actual pages,
 .ptl represent 'partials' that are used within other files)
 WWW/ - the output folder containing compiled pages and other static resources
 compile.py - the template compilation script
+announcements/ - Markdown files for course announcements
 ```
 
 (Note: for hosting on Stanford servers, it's easiest to symlink from the course's WWW/ folder to the above WWW/ folder)
@@ -21,10 +23,13 @@ may want to do:
 
 - **Initial setup and customization:** see `courseInfo.py` for various constants you must specify containing information about your course offering.  These constants define content displayed on various pages; info about these constants is documented within the file.
 
-- **Posting announcements:** add a `<div class="well">` element to
-`templates/announcements.html` containing your announcement.  See existing
-announcements, as well as `templates/announcements-old.html`, for example
-formatting.
+- **Posting announcements:** announcements are written using [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).  The `announcements` folder contains all announcement files (1 file per announcement) - to add a new announcement, create a new Markdown file in that directory.  The filename should be the timestamp after which the announcement is visible, in the format `YYYYMMDDHHMM`.  The file format is specified as follows:
+```
+TITLE HERE
+-
+MARKDOWN HERE
+```
+See the `announcements` directory for several examples.  Note that the second line of the file is always ignored (it is considered a separator between the announcement title and its markdown content).  Note that, if needed, you may include HTML in your Markdown.  When the website is compiled, all the announcement markdown files are rendered reverse-chronologically within `index.html`.
 
 - **Adding handouts (excluding section materials):** add the handout to `WWW/handouts/`, with the
 naming style `NUMBER-DASHED_NAME.extension`.  E.g. `1-General-Information.pdf`.
@@ -40,21 +45,16 @@ materials according to the following naming conventions:
 
 For instance, for section 6 you would add `Section6.pdf`, `Section6.zip` and `Section6-Solutions.pdf`.
 
-You must also create or modify a `solutionsDates.json` file in the root `WWW/section/` directory that looks as follows:
+You must also add an `info.json` file to the directory that looks as follows:
 ```
-[
-	"2017063017",
-	"2017070717",
-	"2017071417",
-	"2017072117",
-	"2017072817",
-	"2017080417",
-	"2017081117"
-]
+{
+	"solutionsDate": "2017063017"
+}
 ```
-This is an array of timestamps that represent when solution materials for section `i+1` should be made available 
-(in the format YYYYMMDDHH).  Section materials with release dates added to this file will be visible in the Section 
-dropdown, with solutions visible from the stated date onwards.
+This timestamp should be when the solution materials will be made available (in the format YYYYMMDDHH).
+The solution handout and code will be visible in the Section dropdown from that
+date onwards.  The section handout will be visible as soon as it is added to the
+repository.
 
 - **Add a new assignment:** add the assignment page template to
 `templates/assignments/` and update
@@ -144,6 +144,7 @@ OUTPUT_DIR - the default output directory for compiled files
 TEMPLATE_DIR - the directory of templates to compile
 HANDOUTS_DIR - the directory within OUTPUT_DIR containing handout PDFs
 SECTION_DIR - the directory within OUTPUT_DIR containing each week's section materials
+ANNOUNCEMENTS_DIR - the directory of announcements to compile
 ```
 
 

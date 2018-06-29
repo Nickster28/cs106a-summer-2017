@@ -18,23 +18,10 @@
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="{{pathToRoot}}js/moment.min.js"></script>
 		<script type="text/javascript" src="{{pathToRoot}}js/index.js"></script>
-		
-		<!-- React Libraries -->
-		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-		<script crossorigin src="https://unpkg.com/react@16.4/umd/react.development.js"></script>
-		<script crossorigin src="https://unpkg.com/react-dom@16.4/umd/react-dom.development.js"></script>
-
-		<!-- React Components -->
-		<script type="text/babel" src="{{pathToRoot}}js/components/SectionDropdown.js"></script>
 
 		<!-- Stanford -->
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css' />
 		<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css' />
-		
-		<!-- Make path to root accessible globally in JS -->
-		<script type="text/javascript">
-			var PATH_TO_ROOT = "{{pathToRoot}}";
-		</script>
 	</head>
 
 	<body>

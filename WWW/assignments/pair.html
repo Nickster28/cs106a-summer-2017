@@ -18,23 +18,10 @@
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/js/moment.min.js"></script>
 		<script type="text/javascript" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/js/index.js"></script>
-		
-		<!-- React Libraries -->
-		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-		<script crossorigin src="https://unpkg.com/react@16.4/umd/react.development.js"></script>
-		<script crossorigin src="https://unpkg.com/react-dom@16.4/umd/react-dom.development.js"></script>
-
-		<!-- React Components -->
-		<script type="text/babel" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/js/components/SectionDropdown.js"></script>
 
 		<!-- Stanford -->
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css' />
 		<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css' />
-		
-		<!-- Make path to root accessible globally in JS -->
-		<script type="text/javascript">
-			var PATH_TO_ROOT = "//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/";
-		</script>
 	</head>
 
 	<body>
@@ -154,15 +141,60 @@
                 <!-- Section dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    	Section <span class="caret"></span>
+                        Section <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu" id="sectionDropdown"></ul>
-                    <script type="text/babel">                        
-                        ReactDOM.render(
-                            <SectionDropdown />,
-                            document.getElementById('sectionDropdown')
-                        );
-                    </script>
+                    <ul class="dropdown-menu">
+<!--
+Generates a list of section links based on the saved section materials.  Expects
+a 'sections' parameter of urls where sections[i] is the url to section i+1's
+materials.  See README for more info.
+-->
+<li class="dropdown-header">Section 1</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/1/Section1.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017063017><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/1/Section1-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017063017><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/1/Section1.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 2</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/2/Section2.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017070717><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/2/Section2-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017070717><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/2/Section2.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 3</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/3/Section3.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017071417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/3/Section3-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017071417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/3/Section3.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 4</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/4/Section4.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017072117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/4/Section4-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017072117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/4/Section4.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 5</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/5/Section5.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017072817><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/5/Section5-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017072817><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/5/Section5.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 6</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/6/Section6.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017080417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/6/Section6-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017080417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/6/Section6.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 7</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/7/Section7.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017081117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/7/Section7-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017081117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/7/Section7.zip">Code</a></li>
+
+                        <li class="divider"></li>
+                        <li><a style="text-align: center;" href="https://cs198.stanford.edu/cs198/auth/default.aspx">View My Section</a></li>
+                        <li><a style="text-align: center;" href="https://cs198.stanford.edu/cs198/auth/section/ViewSections.aspx?class=1">List of all section times/locations</a></li>
+                        <li><a style="text-align: center;" href="https://cs198.stanford.edu/cs198/auth/section/DropClass.aspx?class=1">Drop Section</a></li>
+                    </ul>
                 </li>
             </ul>
 

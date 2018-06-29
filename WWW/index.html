@@ -18,23 +18,10 @@
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/js/moment.min.js"></script>
 		<script type="text/javascript" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/js/index.js"></script>
-		
-		<!-- React Libraries -->
-		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-		<script crossorigin src="https://unpkg.com/react@16.4/umd/react.development.js"></script>
-		<script crossorigin src="https://unpkg.com/react-dom@16.4/umd/react-dom.development.js"></script>
-
-		<!-- React Components -->
-		<script type="text/babel" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/js/components/SectionDropdown.js"></script>
 
 		<!-- Stanford -->
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css' />
 		<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css' />
-		
-		<!-- Make path to root accessible globally in JS -->
-		<script type="text/javascript">
-			var PATH_TO_ROOT = "//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/";
-		</script>
 	</head>
 
 	<body>
@@ -154,15 +141,60 @@
                 <!-- Section dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    	Section <span class="caret"></span>
+                        Section <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu" id="sectionDropdown"></ul>
-                    <script type="text/babel">                        
-                        ReactDOM.render(
-                            <SectionDropdown />,
-                            document.getElementById('sectionDropdown')
-                        );
-                    </script>
+                    <ul class="dropdown-menu">
+<!--
+Generates a list of section links based on the saved section materials.  Expects
+a 'sections' parameter of urls where sections[i] is the url to section i+1's
+materials.  See README for more info.
+-->
+<li class="dropdown-header">Section 1</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/1/Section1.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017063017><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/1/Section1-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017063017><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/1/Section1.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 2</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/2/Section2.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017070717><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/2/Section2-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017070717><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/2/Section2.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 3</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/3/Section3.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017071417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/3/Section3-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017071417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/3/Section3.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 4</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/4/Section4.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017072117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/4/Section4-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017072117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/4/Section4.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 5</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/5/Section5.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017072817><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/5/Section5-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017072817><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/5/Section5.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 6</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/6/Section6.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017080417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/6/Section6-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017080417><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/6/Section6.zip">Code</a></li>
+
+      <li class="divider"></li>
+<li class="dropdown-header">Section 7</li>
+<li><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/7/Section7.pdf">Handout</a></li>
+<li class="visible-after" data-visible-after=2017081117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/7/Section7-Solutions.pdf">Solutions</a></li>
+<li class="visible-after" data-visible-after=2017081117><a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/section/7/Section7.zip">Code</a></li>
+
+                        <li class="divider"></li>
+                        <li><a style="text-align: center;" href="https://cs198.stanford.edu/cs198/auth/default.aspx">View My Section</a></li>
+                        <li><a style="text-align: center;" href="https://cs198.stanford.edu/cs198/auth/section/ViewSections.aspx?class=1">List of all section times/locations</a></li>
+                        <li><a style="text-align: center;" href="https://cs198.stanford.edu/cs198/auth/section/DropClass.aspx?class=1">Drop Section</a></li>
+                    </ul>
                 </li>
             </ul>
 
@@ -311,421 +343,227 @@
 <hr/>    </div>
 
     <div class="col-sm-9">
-<!-- New announcements -->
-<div>
-	<p class="subtleHeading">NEW ANNOUNCEMENTS</p>
+            <div class="well visible-after" data-visible-after="201708231502">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Final Grades Posted</div>
+                    <div class="moment">201708231502</div>
+                </div>
+                <p>Final grades have been uploaded to Axess and should be visible momentarily; please check your Stanford email for more information.  Thank you for a great quarter!  Have a great rest of the summer!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708231501">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Final Exams Graded</div>
+                    <div class="moment">201708231501</div>
+                </div>
+                <p>The final exams have been graded, and individual scores have been released via <a href="https://www.gradescope.com">Gradescope</a>.  Please see the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/exams/final.html">final exam webpage</a> for more information about exam regrades, statistics and scores.  Regrade requests will be accepted until the end of the first week of Fall quarter, at <strong>11:59PM PST on Sunday, October 1, 2017</strong>.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708170001">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">UPDATED: Final Exam Information and Practice Materials</div>
+                    <div class="moment">201708170001</div>
+                </div>
+                <p>We have posted the final exam information page, including exam logistics, topics emphasized, and practice materials.  Click on the "final exam" link in the left sidebar for more information.</p>
+<p><strong>UPDATED: We have added an additional practice final exam, and have also listed the location of the final exam (which depends on your last name).</strong></p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708151602">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Section and Helper Hours the Week of 8/14</div>
+                    <div class="moment">201708151602</div>
+                </div>
+                <p>As we wrap up the quarter, we will be offering our last round of help hours this week.  Specifically, LaIR helper hours will end <strong>after Tuesday, 8/15</strong>.  Nick and Rishi will hold their usual office hours this week, and SCPD office hours will be offered as normal this week as well.</p>
+<p>Additionally, there are no discussion sections this week.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708151601">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">CS 106A Lunches</div>
+                    <div class="moment">201708151601</div>
+                </div>
+                <p>This week, we will be hosting "CS 106A lunches"!  These are informal lunches with the course staff to give you a chance to get lunch, hang out, and ask any questions you may have (about anything!).  Rishi and Nick will be attending, as well as various Section Leaders from both 106A and 106B (the followup course to CS 106A).  The lunches will be at the following times and locations:</p>
+<ol>
+<li><strong>Wednesday, August 16, 11:30AM-12:30PM</strong> @ <a href="https://campus-map.stanford.edu/?id=06-250&amp;lat=37.4254046&amp;lng=-122.16406057&amp;zoom=17&amp;srch=arrillaga%20family">Arrillaga Family Dining Commons</a></li>
+<li><strong>Thursday, August 17, 11:30AM-12:30PM</strong> @ <a href="https://campus-map.stanford.edu/?id=05-010G&amp;lat=37.42469633&amp;lng=-122.17638039&amp;zoom=17&amp;srch=lakeside%20dining">Lakeside (Lag) Dining</a></li>
+</ol>
+<p>Students must swipe themselves in, but anyone is welcome, even those without meal plans.  If you have any financial concerns about attending, please contact Nick or Rishi.  Please meet at the entrance in each dining hall where you swipe in.</p>
+<p>If you are planning on coming, we would appreciate you filling out <a href="https://goo.gl/forms/NTrRtrZD1lxVfnRz2">this form</a> so we can get a sense of how many students are interested (though this is not required to attend).  We hope to see you there!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708092301">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Exporting Projects as JAR Files</div>
+                    <div class="moment">201708092301</div>
+                </div>
+                <p>If you're interested in exporting your Eclipse projects as runnable programs to share with family and friends, see the handout on "JAR Files" linked to from the Handouts dropdown above.  If you export your program as a JAR file, you can run it without Eclipse, just by double-clicking on it.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708091202">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">CS 106A Lunches</div>
+                    <div class="moment">201708091202</div>
+                </div>
+                <p>Next week on <strong>Wednesday, 8/16 @ 12PM</strong> and <strong>Thursday, 8/17 @ 12PM</strong>, we will be hosting "CS 106A lunches"!  These are informal lunches with the course staff to give you a chance to get lunch, hang out, and ask any questions you may have (about anything!).  Rishi and Nick will be attending, as well as various Section Leaders from both 106A and 106B (the followup course to CS 106A).  Each lunch will be at a different dining hall on campus, and details will be announced early next week.  If you have any financial concerns about attending, please contact Nick or Rishi.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708091201">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">The Honor Code</div>
+                    <div class="moment">201708091201</div>
+                </div>
+                <p>As mentioned in class today during the Honor Code discussion, if you wish to retract any of your assignments for any reason whatsoever, please <strong>send Nick an email</strong> (email at left) saying which assignment(s) you wish to retract.  We will, no questions asked, retract that assignment and give you a 0 for that assignment.  In particular, if there were any Honor Code issues with that assignment, retracting will remove it and we will no longer consider it an Honor Code issue.  Note that you may not retract just parts of assignments, and we do not provide an opportunity to redo that assignment.  The deadline to retract an assignment is <strong>Tuesday, August 15 @ 1PM</strong>.</p>
+<p>If you have any questions about the Honor Code, please see the Honor Code handout under the "Handouts" tab.  Also feel free to come talk to us if you have any questions about the Honor Code, retractions, or anything else.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708070901">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Assignment 6: NameSurfer</div>
+                    <div class="moment">201708070901</div>
+                </div>
+                <p><img alt="NameSurfer" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/namesurfer-small.png" /></p>
+<p>For your sixth assignment, you will implement a baby name graphing program that will give you practice with data structures, classes and interactors.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/namesurfer.html">assignment page</a> for more details.  The assignment is due Tuesday, August 15th, but make sure to get started early!  Additionally, <strong>no late submissions (free late days or otherwise) will be accepted on this assignment</strong>.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201708020901">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Midterms Graded</div>
+                    <div class="moment">201708020901</div>
+                </div>
+                <p>The midterm exams have been graded, and individual scores have been released via <a href="https://www.gradescope.com">Gradescope</a>, an online course grading website.  Please see the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/exams/midterm.html">midterm webpage</a> for more information about exam regrades, statistics and scores.  Regrades will be accepted until <strong>1PM on Wednesday, August 9, 2017</strong>.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707312201">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Assignment 5: ImageShop</div>
+                    <div class="moment">201707312201</div>
+                </div>
+                <p><img alt="ImageShop" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/imageshop-small.png" /></p>
+<p>For your fifth assignment, you will implement the algorithms for an image editing program.  This assignment will give you practice with concepts like 1D arrays, 2D arrays, and image manipulation.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/imageshop.html">assignment page</a> for more details. The assignment is due Monday, August 7th, but make sure to get started early!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707211801">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Midterm Review Session Materials</div>
+                    <div class="moment">201707211801</div>
+                </div>
+                <p>Thanks to everyone who came to the midterm review session today!  A recording of the session is now available at the "Lecture Videos" link to the left.  A copy of the slides from today are also available on the Midterm page under "Practice Materials".</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707200901">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Assignment 4: Artistry and Breakout</div>
+                    <div class="moment">201707200901</div>
+                </div>
+                <p><img alt="Breakout" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/breakout-small.png" /></p>
+<p>For your fourth assignment, you will implement the classic arcade game Breakout. This assignment will give you practice with concepts like graphics programs, events, animation and instance variables.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/breakout.html">assignment page</a> for more details. The assignment is due Monday, July 31st, but make sure to get started early!</p>
+<p>In particular, the material covered by this assignment is also covered by the midterm, so starting this assignment before the midterm can give you extra practice with graphics, events, animation and instance variables.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707180901">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Midterm</div>
+                    <div class="moment">201707180901</div>
+                </div>
+                <p>The midterm is coming up on <strong>Monday, July 24 7-9PM PST</strong>, and a review session will be held on <strong>Friday, July 21 3:30-4:50PM PST in Gates B03 (basement)</strong>.  For detailed information, including exam location, material to study, exam policies, and practice material, please see the midterm info webpage, linked to in the sidebar at left.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707131301">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Assignment 3: Hangman</div>
+                    <div class="moment">201707131301</div>
+                </div>
+                <p><img alt="Hangman" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/hangman-small.png" /></p>
+<p>For your third assignment, you will write a console program to play the game "Hangman". This program will give you practice with methods, parameters, return, Strings, and file-reading.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/hangman.html">assignment page</a> for more details.  <strong>This assignment may optionally be completed in pairs.</strong></p>
+<p>The assignment is due Thursday, July 20th, but make sure to get started early!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707130001">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Lecture Feedback</div>
+                    <div class="moment">201707130001</div>
+                </div>
+                <p>Thank you to everyone who has given feedback on some or all of their 2 assigned lectures this quarter (if you have not been emailed yet, your assigned lectures have not come up yet).  We really appreciate your feedback and have been working to incorporate it as much as possible.  If, at any point, you would like to provide quick feedback on a lecture <strong>besides the days to which you are assigned</strong>, please feel free - we would greatly appreciate it!  The feedback link can be found in the "Lectures" dropdown at the top.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707051101">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Assignment 2: Intro to Java</div>
+                    <div class="moment">201707051101</div>
+                </div>
+                <p><img alt="Java" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/java-small.png" /></p>
+<p>For your second assignment, you will write a series of Java console programs. These programs will give you practice with concepts like variables, methods, control flow, and more.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/introToJava.html">assignment page</a> for more details.</p>
+<p>The assignment is due Wednesday, July 12th, but make sure to get started early!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201707030901">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">July 4 Holiday</div>
+                    <div class="moment">201707030901</div>
+                </div>
+                <p>As a reminder, because of the July 4 holiday, we will not have lecture tomorrow.  Additionally, there will be no helper hours or office hours tomorrow; they will resume on Wednesday 7/5.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201706300901">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Debugging with Karel</div>
+                    <div class="moment">201706300901</div>
+                </div>
+                <p>Since we did not have much time to cover the Eclipse debugger during lecture on Wednesday, we have posted instructions and a handout walkthrough to help you get more familiar with debugging using Eclipse.  There are two new resources that may come in handy:</p>
+<ol>
+<li><strong>Instructions on how to use the Eclipse debugger:</strong> these are in a new section added to the Eclipse page, linked to on the left.</li>
+<li><strong>A "Debugging with Karel" handout:</strong> this is a new handout in the "Handouts" dropdown at the top.  This handout walks you through debugging a sample buggy Roomba Karel program using the Eclipse debugger functionality outlined in the above online instructions.</li>
+</ol>
+<p>We <strong><em>highly</em></strong> recommend you read through both of these resources to help you when working on Assignment 1.  Knowing how to use the debugger is a valuable skill that will help you find and fix bugs more quickly.  Moreover, if you run into bugs, you should try finding and fixing them yourself first before reaching out for help at the LaIR or office hours; in particular, at helper hours we will ask what you have first tried on your own to fix the issue you are having.</p>
+<p>Good luck working on Assignment 1!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201706290001">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Help Hours</div>
+                    <div class="moment">201706290001</div>
+                </div>
+                <p>As a reminder, LaIR helper hours and office hours started yesterday, and are available if you need help on your first assignment, or if you have any questions about the material.  The LaIR is in the first floor of Tresidder Union (in the food court area - sign up for help at the computer in the back) and is open <strong>Sun - Wed 7PM-11PM</strong>.  Rishi and Nick's office hours times are listed in the sidebar to the left.</p>
+<hr />
+<p>If you visit the LaIR, you will have the option to sign up for 3 different <em>queues</em> to most efficiently get help:</p>
+<ol>
+<li><strong>2-minute queue:</strong> Sign up for the 2 minute queue if you have a quick 2-minute question a course staff member can help you with.</li>
+<li><strong>CLaIR queue:</strong> Sign up for the "Conceptual LaIR" (CLaIR) queue if you have a conceptual question about an assignment or material.  Note that <em>you are not allowed to ask questions about your code</em> (e.g. debugging questions) in the CLaIR queue; only conceptual questions.</li>
+<li><strong>Standard queue:</strong> Sign up for the standard queue if you have a question that does not fit in the above categories, such as a more in-depth debugging question about your code.</li>
+</ol>
+            </div>
+            <div class="well visible-after" data-visible-after="201706281201">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Assignment 1: Karel the Robot</div>
+                    <div class="moment">201706281201</div>
+                </div>
+                <p><img alt="Karel the Robot" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/karel-small.png" /></p>
+<p>For your first assignment, you will write a series of Karel the Robot programs. See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/karel.html">assignment page</a> for more details.</p>
+<p>The assignment is due Wednesday, July 5th, but make sure to get started early. Though Karel is a fun, simple robot, some of the questions can be tricky!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201706271501">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">UPDATED: Section Assignments + Late Section Signups</div>
+                    <div class="moment">201706271501</div>
+                </div>
+                <p>Regular section signups have concluded, and we have finalized section assignments; you should receive an email from your section leader this evening.</p>
+<p>If you missed regular section signups, you may sign up using the late signup form in the "Section" dropdown at the top.  Any SCPD students who missed the opportunity to sign up for a grader should do so also via the "Section" dropdown at the top.</p>
+<p>If you would like to request a section swap, please <em>carefully follow the instructions below</em>.  The deadline to request a section swap is <strong>Wednesday, 7/5 @ 3PM PST</strong>:</p>
+<ul>
+<li>If you are an individual requesting a swap, you may do so via the "Section" dropdown at the top.</li>
+<li>If you are a pair that are in different sections but would like to be in the same section, please contact the Head TA, Rishi Bedi.</li>
+</ul>
+            </div>
+            <div class="well visible-after" data-visible-after="201706271301">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Lecture Feedback</div>
+                    <div class="moment">201706271301</div>
+                </div>
+                <p>As mentioned in lecture today, as a small portion of your section participation grade we are asking each student to provide brief feedback on <strong>2 assigned lectures</strong> throughout the quarter.  The feedback should only take a few minutes, and will be used to understand how the course is going, and to help make it better.  You will receive an email with a link to the feedback form <strong>before lecture</strong> on each day to which you are assigned.  We greatly appreciate any feedback you have to improve the course!</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201706250002">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Section Signups Open Until 11:59PM Monday 6/26</div>
+                    <div class="moment">201706250002</div>
+                </div>
+                <p>Section signups are now open!  Click on the "Section" dropdown at the top and select "Sign up for section" to submit your preferences.  As a reminder, signups are <strong>not first come first serve</strong>.  As such, you may modify your preferences any time up until the Monday 11:59PM deadline.  We will notify you of your section assignment by Tuesday afternoon, 6/27.  Sections start <strong>this week</strong>!</p>
+<hr />
+<p><strong>Note:</strong> Remote SCPD students (if you are an SCPD student but able to attend a section on campus, you may disregard this message) should <strong>not sign up for a section</strong>; instead, register through the SCPD signup link in the "Section" tab.</p>
+            </div>
+            <div class="well visible-after" data-visible-after="201706250001">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">Welcome</div>
+                    <div class="moment">201706250001</div>
+                </div>
+                <p>Welcome to CS 106A! We are looking forward to a fun quarter. Class starts Monday, June 26th at 11:30AM in NVIDIA Auditorium.  Please see the "Handouts" dropdown above for the General Information handout, as well as the Honor Code handout.  <strong>SCPD students</strong> should also read the SCPD Information handout.</p>
+<div class="mapOverlay" onClick="style.pointerEvents='none'"></div>
+
+<div class="google-maps">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.3968667895306!2d-122.17638518469231!3d37.427728379824046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb2ac97723cb%3A0xa6e8fc1a7a5f2c29!2sNVIDIA+Auditorium!5e0!3m2!1sen!2sus!4v1498094148969" width="600" height="450" style="border:0" allowfullscreen></iframe>
 </div>
-
-<!-- Final Grades -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Final Grades Posted</div>
-		<div class="moment">2017082315</div>
-	</div>
-
-	<p>
-		Final grades have been uploaded to Axess and should be visible momentarily; please check your Stanford email for more information.  Thank you for a great quarter!  Have a great rest of the summer!
-	</p>
-</div>
-
-<!-- Final Results -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Final Exams Graded</div>
-		<div class="moment">2017082315</div>
-	</div>
-
-	<p>
-		The final exams have been graded, and individual scores have been released via <a href="https://www.gradescope.com">Gradescope</a>.  Please see the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/exams/final.html">final exam webpage</a> for more information about exam regrades, statistics and scores.  Regrade requests will be accepted until the end of the first week of Fall quarter, at <strong>11:59PM PST on Sunday, October 1, 2017</strong>.
-	</p>
-</div>
-
-<div>
-	<p class="subtleHeading">OLD ANNOUNCEMENTS</p>
-</div>
-
-<!-- Final prep -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle"><strong>UPDATED: </strong> Final Exam Information and Practice Materials</div>
-		<div class="moment">2017081700</div>
-	</div>
-
-	<p>
-		We have posted the final exam information page, including exam logistics, topics emphasized, and practice materials.  Click on the "final exam" link in the left sidebar for more information.
-	</p>
-	<p>
-		<strong>UPDATED: We have added an additional practice final exam, and have also listed the location of the final exam (which depends on your last name).</strong>
-	</p>
-</div>
-
-<!-- Office Hours -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Section and Helper Hours the Week of 8/14</div>
-		<div class="moment">2017081516</div>
-	</div>
-
-	<p>
-		As we wrap up the quarter, we will be offering our last round of help hours this week.  Specifically, LaIR helper hours will end <strong>after Tuesday, 8/15</strong>.  Nick and Rishi will hold their usual office hours this week, and SCPD office hours will be offered as normal this week as well.
-	</p>
-	<p>
-		Additionally, there are no discussion sections this week.
-	</p>
-</div>
-
-<!-- Lunches -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">CS 106A Lunches</div>
-		<div class="moment">2017081516</div>
-	</div>
-
-	<p>
-		This week, we will be hosting "CS 106A lunches"!  These are informal lunches with the course staff to give you a chance to get lunch, hang out, and ask any questions you may have (about anything!).  Rishi and Nick will be attending, as well as various Section Leaders from both 106A and 106B (the followup course to CS 106A).  The lunches will be at the following times and locations:
-	</p>
-
-	<ol>
-		<li><strong>Wednesday, August 16, 11:30AM-12:30PM</strong> @ <a href="https://campus-map.stanford.edu/?id=06-250&lat=37.4254046&lng=-122.16406057&zoom=17&srch=arrillaga%20family">Arrillaga Family Dining Commons</a></li>
-		<li><strong>Thursday, August 17, 11:30AM-12:30PM</strong> @ <a href="https://campus-map.stanford.edu/?id=05-010G&lat=37.42469633&lng=-122.17638039&zoom=17&srch=lakeside%20dining">Lakeside (Lag) Dining</a></li>
-	</ol>
-	<p>
-		Students must swipe themselves in, but anyone is welcome, even those without meal plans.  If you have any financial concerns about attending, please contact Nick or Rishi.  Please meet at the entrance in each dining hall where you swipe in.
-	</p>
-	<p>	
-		If you are planning on coming, we would appreciate you filling out <a href="https://goo.gl/forms/NTrRtrZD1lxVfnRz2">this form</a> so we can get a sense of how many students are interested (though this is not required to attend).  We hope to see you there!
-	</p>
-</div>
-
-<!-- JAR -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Exporting Projects as JAR Files</div>
-		<div class="moment">2017080923</div>
-	</div>
-
-	<p>
-		If you're interested in exporting your Eclipse projects as runnable programs to share with family and friends, see the handout on "JAR Files" linked to from the Handouts dropdown above.  If you export your program as a JAR file, you can run it without Eclipse, just by double-clicking on it.
-	</p>
-</div>
-
-<!-- Lunches -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">CS 106A Lunches</div>
-		<div class="moment">2017080912</div>
-	</div>
-
-	<p>
-		Next week on <strong>Wednesday, 8/16 @ 12PM</strong> and <strong>Thursday, 8/17 @ 12PM</strong>, we will be hosting "CS 106A lunches"!  These are informal lunches with the course staff to give you a chance to get lunch, hang out, and ask any questions you may have (about anything!).  Rishi and Nick will be attending, as well as various Section Leaders from both 106A and 106B (the followup course to CS 106A).  Each lunch will be at a different dining hall on campus, and details will be announced early next week.  If you have any financial concerns about attending, please contact Nick or Rishi.
-	</p>
-</div>
-
-<!-- Honor Code -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">The Honor Code</div>
-		<div class="moment">2017080912</div>
-	</div>
-
-	<p>
-		As mentioned in class today during the Honor Code discussion, if you wish to retract any of your assignments for any reason whatsoever, please <strong>send Nick an email</strong> (email at left) saying which assignment(s) you wish to retract.  We will, no questions asked, retract that assignment and give you a 0 for that assignment.  In particular, if there were any Honor Code issues with that assignment, retracting will remove it and we will no longer consider it an Honor Code issue.  Note that you may not retract just parts of assignments, and we do not provide an opportunity to redo that assignment.  The deadline to retract an assignment is <strong>Tuesday, August 15 @ 1PM.</strong>
-	</p>
-	<p>
-		If you have any questions about the Honor Code, please see the Honor Code handout under the "Handouts" tab.  Also feel free to come talk to us if you have any questions about the Honor Code, retractions, or anything else.
-	</p>
-</div>
-
-<!-- Assignment 6 -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Assignment 6: NameSurfer</div>
-		<div class="moment">2017080709</div>
-	</div>
-
-	<p>
-		<img style="width:100%" alt="NameSurfer" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/namesurfer.png" />
-	</p>
-
-	<p>
-		For your sixth assignment, you will implement a baby name graphing program that will give you practice with data structures, classes and interactors.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/namesurfer.html">assignment page</a> for more details.  The assignment is due Tuesday, August 15th, but make sure to get started early!  Additionally, <strong>no late submissions (free late days or otherwise) will be accepted on this assignment.</strong>
-	</p>
-</div>
-
-<!-- Midterm Results -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Midterms Graded</div>
-		<div class="moment">201708029</div>
-	</div>
-
-	<p>
-		The midterm exams have been graded, and individual scores have been released via <a href="https://www.gradescope.com">Gradescope</a>, an online course grading website.  Please see the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/exams/midterm.html">midterm webpage</a> for more information about exam regrades, statistics and scores.  Regrades will be accepted until <strong>1PM on Wednesday, August 9, 2017</strong>.
-	</p>
-</div>
-
-<!-- Assignment 5 -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Assignment 5: ImageShop</div>
-		<div class="moment">2017073122</div>
-	</div>
-
-	<p>
-		<img style="width:100%" alt="ImageShop" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/imageshop.png" />
-	</p>
-
-	<p>
-		For your fifth assignment, you will implement the algorithms for an image editing program.  This assignment will give you practice with concepts like 1D arrays, 2D arrays, and image manipulation.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/imageshop.html">assignment page</a> for more details.
-		The assignment is due Monday, August 7th, but make sure to get started early!
-	</p>
-</div>
-
-<!-- Midterm Review -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Midterm Review Session Materials</div>
-		<div class="moment">2017072118</div>
-	</div>
-
-	<p>
-		Thanks to everyone who came to the midterm review session today!  A recording of the session is now available at the "Lecture Videos" link to the left.  A copy of the slides from today are also available on the Midterm page under "Practice Materials".
-	</p>
-</div>
-
-<!-- Assignment 4 -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Assignment 4: Artistry and Breakout</div>
-		<div class="moment">201707209</div>
-	</div>
-
-	<p>
-		<img style="width:100%" alt="Breakout" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/breakout.png" />
-	</p>
-
-	<p>
-		For your fourth assignment, you will implement the classic arcade game Breakout. This assignment will give you practice with concepts like graphics programs, events, animation and instance variables.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/breakout.html">assignment page</a> for more details.
-		The assignment is due Monday, July 31st, but make sure to get started early!
-	</p>
-	<p>
-		In particular, the material covered by this assignment is also covered by the midterm, so starting this assignment before the midterm can give you extra practice with graphics, events, animation and instance variables.
-	</p>
-</div>
-
-<!-- Midterm -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Midterm</div>
-		<div class="moment">2017071809</div>
-	</div>
-	<p>
-		The midterm is coming up on <strong>Monday, July 24 7-9PM PST</strong>, and a review session will be held on <strong>Friday, July 21 3:30-4:50PM PST in Gates B03 (basement)</strong>.  For detailed information, including exam location, material to study, exam policies, and practice material, please see the midterm info webpage, linked to in the sidebar at left.
-	</p>
-</div>
-
-<!-- Assignment 3 -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Assignment 3: Hangman</div>
-		<div class="moment">2017071313</div>
-	</div>
-
-	<div class="media">
-		<div class="media-left">
-			<div style="width:80px;">
-				<img class="media-object" alt="Hangman" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/hangman.png" style="width:80px" />
-			</div>
-		</div>
-		
-		<div class="media-body">
-			<p>
-				For your third assignment, you will write a console program to play the game "Hangman". This program will give you practice with methods, parameters, return, Strings, and file-reading.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/hangman.html">assignment page</a> for more details.  <strong>This assignment may optionally be completed in pairs.</strong>
-				The assignment is due Thursday, July 20th, but make sure to get started early!
-			</p>
-		</div>
-	</div>
-</div>
-
-<!-- Feedback -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Lecture Feedback</div>
-		<div class="moment">2017071300</div>
-	</div>
-
-	<p>
-		Thank you to everyone who has given feedback on some or all of their 2 assigned lectures this quarter (if you have not been emailed yet, your assigned lectures have not come up yet).  We really appreciate your feedback and have been working to incorporate it as much as possible.  If, at any point, you would like to provide quick feedback on a lecture <strong>besides the days to which you are assigned</strong>, please feel free - we would greatly appreciate it!  The feedback link can be found in the "Lectures" dropdown at the top.
-	</p>
-</div>
-
-<!-- Assignment 2 -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Assignment 2: Intro to Java</div>
-		<div class="moment">2017070511</div>
-	</div>
-
-	<div class="media">
-		<div class="media-left">
-			<div style="width:80px;">
-				<img class="media-object" alt="Java" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/java.png" style="width:80px" />
-			</div>
-		</div>
-		
-		<div class="media-body">
-			<p>
-				For your second assignment, you will write a series of Java console programs. These programs will give you practice with concepts like variables, methods, control flow, and more.  See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/introToJava.html">assignment page</a> for more details.
-				The assignment is due Wednesday, July 12th, but make sure to get started early!
-			</p>
-		</div>
-	</div>
-</div>
-
-<!-- Holiday -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">July 4 Holiday</div>
-		<div class="moment">2017070309</div>
-	</div>
-
-	<p>
-		As a reminder, because of the July 4 holiday, we will not have lecture tomorrow.  Additionally, there will be no helper hours or office hours tomorrow; they will resume on Wednesday 7/5.
-	</p>
-</div>
-
-<!-- Debugging -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Debugging with Karel</div>
-		<div class="moment">2017063009</div>
-	</div>
-
-	<p>
-		Since we did not have much time to cover the Eclipse debugger during lecture on Wednesday, we have posted instructions and a handout walkthrough to help you get more familiar with debugging using Eclipse.  There are two new resources that may come in handy:
-	</p>
-
-	<ol>
-		<li><strong>Instructions on how to use the Eclipse debugger:</strong> these are in a new section added to the Eclipse page, linked to on the left.</li>
-		<li><strong>A "Debugging with Karel" handout:</strong> this is a new handout in the "Handouts" dropdown at the top.  This handout walks you through debugging a sample buggy Roomba Karel program using the Eclipse debugger functionality outlined in the above online instructions.</li>
-	</ol>
-	<p>
-		We <i><strong>highly</strong></i> recommend you read through both of these resources to help you when working on Assignment 1.  Knowing how to use the debugger is a valuable skill that will help you find and fix bugs more quickly.  Moreover, if you run into bugs, you should try finding and fixing them yourself first before reaching out for help at the LaIR or office hours; in particular, at helper hours we will ask what you have first tried on your own to fix the issue you are having.
-		<br />
-		<br />
-		Good luck working on Assignment 1!
-	</p>
-</div>
-
-<!-- Help hours -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Help Hours</div>
-		<div class="moment">2017062900</div>
-	</div>
-
-	<p>
-		As a reminder, LaIR helper hours and office hours started yesterday, and are available if you need help on your first assignment, or if you have any questions about the material.  The LaIR is in the first floor of Tresidder Union (in the food court area - sign up for help at the computer in the back) and is open <strong>Sun - Wed 7PM-11PM</strong>.  Rishi and Nick's office hours times are listed in the sidebar to the left.
-		<br />
-		<br />
-		If you visit the LaIR, you will have the option to sign up for 3 different <strong>queues</strong> to most efficiently get help:
-	</p>
-	<ul>
-		<li><strong>2-minute queue:</strong> Sign up for the 2 minute queue if you have a quick 2-minute question a course staff member can help you with.</li>
-		<li><strong>CLaIR queue:</strong> Sign up for the "Conceptual LaIR" (CLaIR) queue if you have a conceptual question about an assignment or material.  Note that <i>you are not allowed to ask questions about your code</i> (e.g. debugging questions) in the CLaIR queue; only conceptual questions.</li>
-		<li><strong>Standard queue:</strong> Sign up for the standard queue if you have a question that does not fit in the above categories, such as a more in-depth debugging question about your code.
-	</ul>
-</div>
-
-<!-- Assignment 1 -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Assignment 1: Karel the Robot</div>
-		<div class="moment">2017062812</div>
-	</div>
-
-	<div class="media">
-		<div class="media-left">
-			<div style="width:80px;">
-				<img class="media-object" alt="Karel the Robot" src="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/images/assignments/karel.png" style="width:80px" />
-			</div>
-		</div>
-		
-		<div class="media-body">
-			<p>
-				For your first assignment, you will write a series of Karel the Robot programs. See the <a href="//web.stanford.edu/class/archive/cs/cs106a/cs106a.1178/assignments/karel.html">assignment page</a> for more details.
-				The assignment is due Wednesday, July 5th, but make sure to get started early. Though Karel is a fun, simple robot, some of the questions can be tricky!
-			</p>
-		</div>
-	</div>
-</div>
-
-<!-- Section results -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">UPDATED: Section Assignments + Late Section Signups</div>
-		<div class="moment">2017062700</div>
-	</div>
-
-	<p>
-		Regular section signups have concluded, and we have finalized section assignments; you should receive an email from your section leader this evening.
-		<br />
-		<br />
-		If you missed regular section signups, you may sign up using the late signup form in the "Section" dropdown at the top.  Any SCPD students who missed the opportunity to sign up for a grader should do so also via the "Section" dropdown at the top.
-		<br />
-		<br />
-		If you would like to request a section swap, please <i>carefully follow the instructions below</i>.  The deadline to request a section swap is <strong>Wednesday, 7/5 @ 3PM PST</strong>:
-	</p>
-	<ul>
-		<li>If you are an individual requesting a swap, you may do so via the "Section" dropdown at the top.</li>
-		<li>If you are a pair that are in different sections but would like to be in the same section, please contact the Head TA, Rishi Bedi.</li>
-	</ul>
-</div>
-
-<!-- Tiny feedback -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Lecture Feedback</div>
-		<div class="moment">2017062713</div>
-	</div>
-
-	<p>
-		As mentioned in lecture today, as a small portion of your section participation grade we are asking each student to provide brief feedback on <strong> 2 assigned lectures</strong> throughout the quarter.  The feedback should only take a few minutes, and will be used to understand how the course is going, and to help make it better.  You will receive an email with a link to the feedback form <strong>before lecture</strong> on each day to which you are assigned.  We greatly appreciate any feedback you have to improve the course!
-	</p>
-</div>
-
-<!-- Section signups -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Section Signups Open Until 11:59PM Monday 6/26</div>
-		<div class="moment">2017062500</div>
-	</div>
-
-	<p>
-		Section signups are now open!  Click on the "Section" dropdown at the top and select "Sign up for section" to submit your preferences.  As a reminder, signups are <strong>not first come first serve</strong>.  As such, you may modify your preferences any time up until the Monday 11:59PM deadline.  We will notify you of your section assignment by Tuesday afternoon, 6/27.  Sections start <strong>this week</strong>!
-
-		<br />
-		<br />
-
-		<strong>Note:</strong> Remote SCPD students (if you are an SCPD student but able to attend a section on campus, you may disregard this message) should <strong>not sign up for a section</strong>; instead, register through the SCPD signup link in the "Section" tab.
-	</p>
-</div>
-
-<!-- Welcome -->
-<div class="well">
-	<div class="newsfeedHeader">
-		<div class="newsfeedTitle">Welcome</div>
-		<div class="moment">2017062500</div>
-	</div>
-
-	<p>
-		Welcome to CS 106A! We are looking forward to a fun quarter. Class starts Monday, June 26th at 11:30AM in NVIDIA Auditorium.  Please see the "Handouts" dropdown above for the General Information handout, as well as the Honor Code handout.  <strong>SCPD students</strong> should also read the SCPD Information handout.
-	</p>
-	<div class="mapOverlay" onClick="style.pointerEvents='none'"></div>
-	<div class="google-maps">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.3968667895306!2d-122.17638518469231!3d37.427728379824046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb2ac97723cb%3A0xa6e8fc1a7a5f2c29!2sNVIDIA+Auditorium!5e0!3m2!1sen!2sus!4v1498094148969" width="600" height="450" style="border:0" allowfullscreen></iframe>
-	</div>
-</div>    </div>
+            </div>
+    </div>
 </div>
 			
 			<!-- Footer -->
