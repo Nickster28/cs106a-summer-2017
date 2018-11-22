@@ -1,0 +1,4 @@
+AuthType WebAuth
+require privgroup stanford:stanford
+require privgroup stanford:administrative
+require privgroup stanford:academic
