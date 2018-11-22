@@ -92,11 +92,11 @@ pickBeeper();	</pre>
 		<p>Place a blank line between methods and between groups of statements.</p>		
 		
 		<pre>
-public void foo() {
+private void foo() {
 	...
 }
 								<span class="code-comment">// this blank line here</span>
-public void bar() {
+private void bar() {
 	...
 }		</pre>
 	</dd>

@@ -26,12 +26,12 @@ $(document).ready(function(){
 		}
 	});
 
-	// only show section solutions if they should be released
-	$(".section-solutions").each(function(i) {
-	    var dateStr = $(this).attr("data-solutions-release");
+	// only show certain content if they should be released
+	$(".visible-after").each(function(i) {
+	    var dateStr = $(this).attr("data-visible-after");
 	    var releaseDate = moment(dateStr, "YYYYMMDDHH");
 	    if (!releaseDate.isSameOrBefore(moment())) {
-	    	$(this).empty();
+	    	$(this).remove();
 	    }
 	});
 });

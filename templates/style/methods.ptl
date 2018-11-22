@@ -58,14 +58,14 @@
 			<div class="col-xs-12 col-sm-6">
 				<pre class="code-bad">
 <span class="code-comment">// bad</span>
-public void makeLeftTurn() {
+private void makeLeftTurn() {
 	turnLeft();
 }</pre>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<pre class="code-good">
 <span class="code-comment">// good</span>
-public void safePickup() {
+private void safePickup() {
 	if (beepersPresent()) {
 		pickBeeper();
 	}
@@ -85,7 +85,7 @@ public void safePickup() {
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<pre class="code-bad">
-<span class="code-comment">// bad (recursion)</span>
+<span class="code-comment">// discouraged (recursion)</span>
 public void methodOne() {
 	if (frontIsClear()) {
 		move();
@@ -95,8 +95,8 @@ public void methodOne() {
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<pre class="code-good">
-<span class="code-comment">// good</span>
-public void moveToWall() {
+<span class="code-comment">// encouraged</span>
+private void moveToWall() {
 	<em>while (frontIsClear()) {</em>
 		move();
 	}
@@ -108,15 +108,15 @@ public void moveToWall() {
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<pre class="code-bad">
-<span class="code-comment">// bad (mutual recursion)</span>
-public void methodOne() {
+<span class="code-comment">// discouraged (mutual recursion)</span>
+private void methodOne() {
 	if (frontIsClear()) {
 		move();
 		<em>methodTwo();</em>
 	}
 }
 
-public void methodTwo() {
+private void methodTwo() {
 	if (frontIsClear()) {
 		move();
 		<em>methodOne();</em>

@@ -35,6 +35,19 @@
     </div>
 
     <div class="col-sm-9">
-        %include templates/announcements.ptl
+<%
+        for announcement in announcements:
+            markdownText = announcement["markdown"].replace("{{pathToRoot}}", pathToRoot)
+            markdownHTML = markdownFn(markdownText)
+            announcementDate = announcement["timestamp"]
+%>
+            <div class="well visible-after" data-visible-after="{{announcementDate}}">
+                <div class="newsfeedHeader">
+                    <div class="newsfeedTitle">{{announcement["title"]}}</div>
+                    <div class="moment">{{announcementDate}}</div>
+                </div>
+                {{!markdownHTML}}
+            </div>
+        % end
     </div>
 </div>

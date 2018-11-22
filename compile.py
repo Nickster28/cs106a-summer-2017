@@ -23,20 +23,26 @@ same directory structure as in the TEMPLATE_DIR directory.
 ----------------
 '''
 
-import os.path
 from bottle.bottle import SimpleTemplate
-import sys
-import json
 import courseInfo
+import json
+import markdown
+import os.path
+import sys
+
 
 TEMPLATE_DIR = 'templates'
+
+ANNOUNCEMENTS_DIR = 'announcements'
 
 # Assumed to be within OUTPUT_DIR
 HANDOUTS_DIR = 'handouts'
 SECTION_DIR = 'section'
 
+CLASSNAME = courseInfo.COURSE_NUMBER.replace(" ", "").lower()
 # The root URL at which this webpage is hosted
-ROOT = '//web.stanford.edu/class/archive/cs/cs106a/cs106a.' + str(courseInfo.QUARTER_NUMBER) + '/'
+ROOT = '//web.stanford.edu/class/archive/cs/' + CLASSNAME + '/' + CLASSNAME + '.' + str(courseInfo.QUARTER_NUMBER) + '/'
+
 
 # Use the -t flag if you want to compile for local tests
 DEPLOY = not '-t' in sys.argv
@@ -63,6 +69,7 @@ def compile():
     with open('schedule.json') as scheduleFile:
         scheduleData = json.load(scheduleFile)
         handoutsData = searchHandoutsDirectory()
+        announcementsData = searchAnnouncementsDirectory()
         sectionData = searchSectionDirectory()
 
         # Compile all templates
@@ -71,7 +78,7 @@ def compile():
         for templateFilePath in templateFilePaths:
             print("Compiling " + templateFilePath + "...")
             outputPath = compileTemplate(templateFilePath, scheduleData,
-                handoutsData, sectionData)
+                handoutsData, announcementsData, sectionData)
             print(templateFilePath + " -> " + outputPath)
 
     print("\nDONE.\n")
@@ -100,8 +107,10 @@ def searchHandoutsDirectory():
         handoutName = nameList[0] + ' - ' + ' '.join(nameList[1:])
 
         handoutsData.append((handoutName, filePath))
+        handoutsData.sort(key=lambda x: x[0])
 
     return handoutsData 
+
 
 '''
 FUNCTION: searchSectionDirectory
@@ -133,6 +142,37 @@ def searchSectionDirectory():
                 )
     paths.sort()
     return paths
+
+
+'''
+FUNCTION: searchAnnouncementsDirectory
+---------------------------------
+Parameters: NA
+Returns: a list of dicts containing information about the announcements in
+ANNOUNCEMENTS_DIR.  In particular, the dicts contain keys for title, timestamp,
+and markdown.  Sorted by increasing (later) date.
+---------------------------------
+'''
+def searchAnnouncementsDirectory():
+    announcementsData = []
+    dirPath = ANNOUNCEMENTS_DIR + '/'
+    for fileName in os.listdir(dirPath):
+        filePath = os.path.join(ANNOUNCEMENTS_DIR, fileName)
+        if fileName.startswith(".") or (not fileName.endswith(".md")):
+            continue
+
+        with open(filePath, 'r') as f:
+            title = f.readline().strip()
+            f.readline()
+            announcement = {
+                "title": title,
+                "timestamp": fileName[:-3],
+                "markdown": f.read()
+            }
+            announcementsData.append(announcement)
+
+    return sorted(announcementsData, key=lambda a: a["timestamp"], reverse=True)
+
 
 '''
 FUNCTION: getTemplateFilePaths
@@ -183,23 +223,24 @@ Parameters:
                     parameter to render the template.
     handoutsData - the list of tuples of handout data.  Passed in as a parameter
                     to render the template.
+    announcementsData - the list of dicts of announcement data.  Passed in as
+                    a parameter to render the template.
     sectionData - the list of section folders.  Passed in as a parameter to
                     render the template.
 
 Returns: the path of the saved, compiled template file.
 
-Compiles the given template file, passing in the pathToRoot, scheduleData,
-handoutsData and sectionData as template parameters.  Saves the compiled
-template to relativePath in the OUTPUT_DIR directory.
+Compiles the given template file, with the provided template parameters.  Saves
+the compiled template to relativePath in the OUTPUT_DIR directory.
 -------------------------
 '''
-def compileTemplate(relativePath, scheduleData, handoutsData, sectionData):
+def compileTemplate(relativePath, scheduleData, handoutsData, announcementsData, sectionData):
     pathToRoot = getPathToRootFrom(relativePath)
     filePath = os.path.join(TEMPLATE_DIR, relativePath)
     templateText = open(filePath).read()
     compiledHtml = SimpleTemplate(templateText).render(pathToRoot=pathToRoot,
-        schedule=scheduleData, handouts=handoutsData, sections=sectionData,
-        courseInfo=courseInfo)
+        schedule=scheduleData, handouts=handoutsData, markdownFn=markdown.markdown,
+        announcements=announcementsData, sections=sectionData, courseInfo=courseInfo)
     compiledHtml = compiledHtml.encode('utf8')
 
     relativePath = os.path.join(OUTPUT_DIR, relativePath)

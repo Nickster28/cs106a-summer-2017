@@ -55,7 +55,7 @@ helper(10);
 helper(15);
 ...
 
-void helper(int newX) {
+private void helper(int newX) {
     foo();
     x = newX;
     y++;

@@ -9,16 +9,16 @@ QUARTER_NUMBER = 1178
 QUARTER_NAME = "Summer"
 QUARTER_YEAR = "2017"
 QUARTER_FULL_NAME = QUARTER_NAME + " " + QUARTER_YEAR
-QUARTER_OVER = True
+QUARTER_OVER = True  # Set to True to add banner at the top redirecting to newer version of webpage
 
-# Lecture information
+# Lecture information (displayed at top of home page)
 LECTURE_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday"]
 LECTURE_TIME = "11:30AM-12:20PM PST"
 LECTURE_LOCATION = "NVIDIA Auditorium"
 LECTURE_LOCATION_LINK = "https://www.google.com/maps/place/NVIDIA+Auditorium/@37.4277284,-122.1763905,17z/data=!3m1!4b1!4m5!3m4!1s0x808fbb2ac97723cb:0xa6e8fc1a7a5f2c29!8m2!3d37.4277284!4d-122.1741965"
 LECTURE_FEEDBACK_LINK = "https://goo.gl/forms/viRkXgYxDRq0Uorm2" # Length > 0
 
-# Course staff
+# Course staff (displayed in left sidebar and on staff page)
 STAFF_INFO = [
 	{
 		"POSITION": "Instructor",
@@ -40,6 +40,7 @@ STAFF_INFO = [
 	}
 ]
 
+# Note: section leader names MUST be formatted "NAME (SUNET)" as the image for a given Section Leader is assumed to be SUNET.jpg.
 SECTION_LEADERS = [
 	"Aleksander Dash (adash)",
 	"Canyon Robins (crobins)",
@@ -65,7 +66,7 @@ SECTION_LEADERS = [
 	"Wil Kautz (wkautz)"
 ]
 
-# SCPD
+# SCPD (listed in left sidebar)
 SCPD_OFFICE_HOURS = [
 	"Sun 5:30-7PM PST",
 	"Tues 9-11AM PST",
@@ -77,11 +78,11 @@ SCPD_OFFICE_HOURS = [
 SCPD_OFFICE_HOURS_LINK = "http://www.queuestatus.com/queues/122"
 SCPD_OFFICE_HOURS_DESCRIPTION = "SCPD students can sign up for help at the times above (free QueueStatus account required)."
 
-# Exams
+# Exams (displayed in left sidebar, but locations and review session are only displayed on exam subpages)
 MIDTERM = {
 	"DATE": "Monday, July 24",
 	"TIME": "7-9PM PST",
-	"LOCATIONS": [
+	"LOCATIONS": [ 	# A list of objects containing TITLE, LOCATION, MAP_LINK
 		{
 			"TITLE": "Exam",
 			"LOCATION": "Hewlett 200",
@@ -99,7 +100,7 @@ MIDTERM = {
 FINAL_EXAM = {
 	"DATE": "Friday, August 18",
 	"TIME": "12:15-3:15PM PST",
-	"LOCATIONS": [
+	"LOCATIONS": [	# A list of objects containing TITLE, LOCATION, MAP_LINK
 		{
 			"TITLE": "Last Names A-O",
 			"LOCATION": "NVIDIA Auditorium",
@@ -119,7 +120,7 @@ FINAL_EXAM = {
 	}
 }
 
-# Assignments
+# Assignments (displayed in Assignments dropdown at the top)
 STYLE_GUIDE = True
 PAIR_PROGRAMMING = True
 ASSIGNMENTS = [
