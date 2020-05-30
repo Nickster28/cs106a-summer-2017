@@ -12,7 +12,7 @@
 
 	<!-- Course Staff -->		
 	<span class="sidebaricon glyphicon glyphicon-user" aria-hidden="true"></span>
-	<a href="{{pathToRoot}}staff.html">Course Staff</a><br/>
+	<a href="{{pathToRoot}}staff">Course Staff</a><br/>
 
 	<!-- Textbooks -->
 	<span class="sidebaricon glyphicon glyphicon-book" aria-hidden="true"></span>
